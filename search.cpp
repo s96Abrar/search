@@ -124,7 +124,7 @@ void search::loadSearchActivity()
             searchActF.beginGroup(group);
 
             QStringList keys = searchActF.childKeys();
-            sortTime(keys, Utilities::sortOrder::DESCENDING, "hh.mm.ss");
+            Utilities::sortTime(keys, Utilities::sortOrder::DESCENDING, "hh.mm.ss");
 
             foreach (QString key, keys) {
                 QTreeWidgetItem *child = new QTreeWidgetItem;
@@ -539,4 +539,15 @@ void search::enableAllButtons()
     ui->more->setEnabled(1);
     ui->setfolder->setEnabled(1);
     ui->cancelProc->setVisible(0);
+}
+
+void search::sendFiles(const  QStringList &paths)
+{
+    if (paths.count()) {
+        if(QFileInfo(paths.at(0)).isFile()){
+            ui->folderPath->setText(QFileInfo(paths.at(0)).path());
+        } else {
+            ui->folderPath->setText(paths.at(0));
+        }
+    }
 }

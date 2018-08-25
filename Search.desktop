@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Search
+Comment=Search is file finder app from CoreApps.
+Exec=search %F
+Icon=/usr/share/icons/CoreApps/Search.svg
+Type=Application
+Categories=Utility;Qt;System;
+Terminal=false
+StartupNotify=true

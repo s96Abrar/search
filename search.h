@@ -32,8 +32,8 @@ along with this program; if not, see {http://www.gnu.org/licenses/}. */
 #include <QFileDialog>
 #include <QTreeWidgetItem>
 
-#include "utilities.h"
-#include "globalfunctions.h"
+#include <cprime/utilities.h>
+#include <cprime/globalfunctions.h>
 
 
 namespace Ui {
@@ -50,6 +50,7 @@ public:
 
     void setPath(const QString &path);
     QString workFilePath() const;
+    void sendFiles(const QStringList &paths);
 
 private:
     Ui::search *ui;
