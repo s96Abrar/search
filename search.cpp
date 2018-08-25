@@ -23,7 +23,7 @@ search::search(QWidget *parent) :QWidget(parent),ui(new Ui::search)
     ui->setupUi(this);
 
     // set stylesheet from style.qrc
-    setStyleSheet(Utilities::getStylesheetFileContent(":/appStyle/style/Search.qss"));
+    setStyleSheet(Utilities::getStylesheetFileContent(Utilities::StyleAppName::SearchStyle));
 
     // set window size
     int x = static_cast<int>(Utilities::screensize().width()  * .8);
