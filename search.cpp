@@ -29,7 +29,8 @@ search::search(QWidget *parent) :QWidget(parent),ui(new Ui::search)
     int x = static_cast<int>(Utilities::screensize().width()  * .8);
     int y = static_cast<int>(Utilities::screensize().height()  * .7);
     this->resize(x, y);
-
+    
+    qRegisterMetaType<QVector<int>>("QVector<int>");
     startsetup();
 }
 
