@@ -468,7 +468,8 @@ void search::on_results_itemDoubleClicked(QTableWidgetItem *item)
 {
     // Function from utilities.cpp
     QString path = ui->results->item(item->row(), 1)->text() + "/" + ui->results->item(item->row(), 0)->text();
-    GlobalFunc::appSelectionEngine(path);
+    qDebug()<< path;
+    GlobalFunc::appSelectionEngine(path,this);
 }
 
 void search::on_more_clicked(bool checked)
