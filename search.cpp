@@ -29,7 +29,8 @@ search::search(QWidget *parent) :QWidget(parent),ui(new Ui::search)
     int x = static_cast<int>(Utilities::screensize().width()  * .8);
     int y = static_cast<int>(Utilities::screensize().height()  * .7);
     this->resize(x, y);
-
+    
+    qRegisterMetaType<QVector<int>>("QVector<int>");
     startsetup();
 }
 
@@ -467,7 +468,8 @@ void search::on_results_itemDoubleClicked(QTableWidgetItem *item)
 {
     // Function from utilities.cpp
     QString path = ui->results->item(item->row(), 1)->text() + "/" + ui->results->item(item->row(), 0)->text();
-    GlobalFunc::appSelectionEngine(path);
+    qDebug()<< path;
+    GlobalFunc::appSelectionEngine(path,this);
 }
 
 void search::on_more_clicked(bool checked)
